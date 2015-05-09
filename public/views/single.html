@@ -1,0 +1,24 @@
+<div>
+  <h1 ng-if="user.type == 'create'">Create User</h1>
+  <h1 ng-if="user.type == 'edit'">Edit User</h1>
+</div>
+
+<form ng-submit="user.saveUser()">
+  <div>
+    <label>Username</label>
+    <input type="text" ng-model="user.userData.username">
+  </div>
+  <div>
+    <label>Info</label>
+    <input type="text" ng-model="user.userData.userinfo">
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="password"ng-model="user.userData.password">
+  </div>
+  <div>
+    <button type="submit" ng-if="user.type == 'create'">Create User</button>
+    <button type="submit" ng-if="user.type == 'edit'">Update User</button>
+    <a href="#/" ">Cancel</a>
+  </div>
+</form>

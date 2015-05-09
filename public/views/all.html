@@ -1,0 +1,22 @@
+<div>
+  <h1>Users </h1>
+  <a href="#/users/create"> Create New User </a>
+</div>
+<table ng-show="user.users">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Info</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="u in user.users">
+      <td>{{u.username}}</td>
+      <td>{{u.userinfo}}</td>
+      <td><a ng-href="#/users/{{u.username}}">Edit</a></td>
+      <td><a href="" ng-click="user.deleteUser(u.username)">Delete</a></td>
+    </tr>
+  </tbody>
+</table>
