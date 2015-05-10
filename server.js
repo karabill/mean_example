@@ -9,7 +9,9 @@ var bodyParser = require('body-parser');
 var config    = require('./config');
 
 //Connect to the database.
-mongoose.connect(config.database);
+mongoose.connect(config.database, function(err, conn){
+  console.log('Error in db conection: ' + err);
+});
 
 //Create an express app.
 var app = express();
@@ -41,5 +43,5 @@ app.get('*', function(req, res) {
 });
 
 //Start the express app.
-app.listen(config.port);
+app.listen(config.port, config.ipaddress);
 console.log('Server listens on port: ' + config.port);
